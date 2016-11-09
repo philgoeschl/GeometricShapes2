@@ -47,15 +47,24 @@ public class Main {
         main.doItTwoDim();
         main.doItThreeDim();
 
+
     }
 
     private void doItThreeDim() {
 
         List<ThreeDim> threeDimList = new ArrayList<>();
-
         fillList3(threeDimList);
-
         printList3(threeDimList);
+        sumVolume(threeDimList);
+        sumSurfaceArea(threeDimList);
+
+    }
+
+    private void sumSurfaceArea(List<ThreeDim> threeDimList) {
+
+    }
+
+    private void sumVolume(List<ThreeDim> threeDimList) {
 
     }
 
@@ -81,18 +90,29 @@ public class Main {
     private void doItTwoDim() {
 
         List<TwoDim> twoDimList = new ArrayList<>();
-
         fillList2(twoDimList);
-
         printList2(twoDimList);
+        sumArea(twoDimList);
+        sumPerimeter(twoDimList);
 
 
     }
 
+    private void sumPerimeter(List<TwoDim> twoDimList) {
+        for (TwoDim perimeter : twoDimList) {
+
+        }
+    }
+
+    private void sumArea(List<TwoDim> twoDimList) {
+
+    }
+
     private void printList2(List<TwoDim> twoDimList) {
+
         for (TwoDim twoDim : twoDimList) {
             System.out.println(twoDim);
-        }         
+        }
 
     }
 
