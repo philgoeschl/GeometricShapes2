@@ -16,7 +16,7 @@ import static jdk.nashorn.internal.objects.Global.print;
 
 
 /**
- * Created by Philipp Goeschl on 09.11.2016.
+ * Created by Philipp Göschl on 09.11.2016.
  */
 public class Main {
 
@@ -50,69 +50,26 @@ public class Main {
 
     }
 
-    private void doItThreeDim() {
-
-        List<ThreeDim> threeDimList = new ArrayList<>();
-        fillList3(threeDimList);
-        printList3(threeDimList);
-        sumVolume(threeDimList);
-        sumSurfaceArea(threeDimList);
-
-    }
-
-    private void sumSurfaceArea(List<ThreeDim> threeDimList) {
-
-    }
-
-    private void sumVolume(List<ThreeDim> threeDimList) {
-
-    }
-
-    private void printList3(List<ThreeDim> threeDimList) {
-        for (ThreeDim threeDim : threeDimList) {
-            System.out.println(threeDim);
-        }
-
-    }
-
-    private void fillList3(List<ThreeDim> threeDimList) {
-        threeDimList.add(new Kugel(0,0,0,5));
-        threeDimList.add(new Kugel(0,0,0,4));
-        threeDimList.add(new Kugel(0,0,0,1));
-        threeDimList.add(new Zylinder(0,0,0,4,5));
-        threeDimList.add(new Zylinder(0,0,0,2,4));
-        threeDimList.add(new Zylinder(0,0,0,4,4));
-        threeDimList.add(new Pyramide(0,0,0,5,5,5,5,5));
-        threeDimList.add(new Pyramide(0,0,0,4,2,5,3,5));
-        threeDimList.add(new Pyramide(0,0,0,1,1,1,1,1));
-    }
-
     private void doItTwoDim() {
 
         List<TwoDim> twoDimList = new ArrayList<>();
         fillList2(twoDimList);
         printList2(twoDimList);
-        sumArea(twoDimList);
-        sumPerimeter(twoDimList);
-
-
-    }
-
-    private void sumPerimeter(List<TwoDim> twoDimList) {
-        for (TwoDim perimeter : twoDimList) {
-
-        }
-    }
-
-    private void sumArea(List<TwoDim> twoDimList) {
-
     }
 
     private void printList2(List<TwoDim> twoDimList) {
+        System.out.println("\n---------- Two Dimensional Shapes ----------\n");
 
+        double sumArea=0;
+        double sumPerimeter=0;
         for (TwoDim twoDim : twoDimList) {
             System.out.println(twoDim);
+            sumArea += twoDim.calcArea();
+            sumPerimeter += twoDim.calcPerimeter();
+
         }
+        System.out.println("\nSum of Area: "+sumArea);
+        System.out.println("\nSum of Perimeter: "+sumPerimeter);
 
     }
 
@@ -127,6 +84,43 @@ public class Main {
         twoDimList.add(new Raute(0,0,5,5,10));
         twoDimList.add(new Raute(0,0,5,2,5));
 
+    }
+
+    private void doItThreeDim() {
+
+        List<ThreeDim> threeDimList = new ArrayList<>();
+        fillList3(threeDimList);
+        printList3(threeDimList);
+
+
+    }
+
+
+    private void printList3(List<ThreeDim> threeDimList) {
+        System.out.println("\n---------- Three Dimensional Shapes ----------\n");
+
+        double sumVolume=0;
+        double sumSurfaceArea=0;
+        for (ThreeDim threeDim : threeDimList) {
+            System.out.println(threeDim);
+            sumVolume += threeDim.calcVolume();
+            sumSurfaceArea += threeDim.calcSurfaceArea();
+        }
+        System.out.println("\nSum of Volume: "+sumVolume);
+        System.out.println("\nSum of Surface Area: "+sumSurfaceArea);
+
+    }
+
+    private void fillList3(List<ThreeDim> threeDimList) {
+        threeDimList.add(new Kugel(0,0,0,5));
+        threeDimList.add(new Kugel(0,0,0,4));
+        threeDimList.add(new Kugel(0,0,0,1));
+        threeDimList.add(new Zylinder(0,0,0,4,5));
+        threeDimList.add(new Zylinder(0,0,0,2,4));
+        threeDimList.add(new Zylinder(0,0,0,4,4));
+        threeDimList.add(new Pyramide(0,0,0,5,5,5,5,5));
+        threeDimList.add(new Pyramide(0,0,0,4,2,5,3,5));
+        threeDimList.add(new Pyramide(0,0,0,1,1,1,1,1));
     }
 
 
